@@ -1,52 +1,63 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="UTF-8">
-<title>Applications | UniHour</title>
-<link rel="stylesheet" href="css/glass.css">
+    <meta charset="UTF-8">
+    <title>Applications | UniHour</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/glass.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { background: var(--bg-dark); font-family: 'Outfit', sans-serif; display: flex; flex-direction: column; height: auto; padding-top: 80px; }
+        .glass-container { margin: 2rem auto; width: 95%; max-width: 1000px; padding: 2rem; }
+        .back-nav { position: fixed; top: 0; width: 100%; padding: 1rem 5%; background: rgba(0,0,51,0.9); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid var(--glass-border); }
+        .back-nav a { color: var(--primary-green); text-decoration: none; font-weight: 600; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; color: white; }
+        th { text-align: left; padding: 1rem; border-bottom: 2px solid var(--glass-border); color: var(--text-muted); }
+        td { padding: 1rem; border-bottom: 1px solid var(--glass-border); }
+        .btn-hire { background: var(--primary-green); color: var(--bg-dark); border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 700; cursor: pointer; }
+    </style>
 </head>
 
 <body>
+    <nav class="back-nav">
+        <a href="employer_dashboard.html">← Back to Dashboard</a>
+    </nav>
 
-<div class="glass-container">
+    <div class="glass-container">
+        <h2 style="color: var(--primary-green); margin-bottom: 1.5rem;">Student Applications</h2>
 
-<h2>Student Applications</h2>
-
-<table>
-
-<tr>
-<th>Student Name</th>
-<th>College</th>
-<th>Job Applied</th>
-<th>Status</th>
-</tr>
-
-<tr>
-<td>Rahul</td>
-<td>Bangalore University</td>
-<td>Event Helper</td>
-<td><button class="accept">Accept</button></td>
-</tr>
-
-<tr>
-<td>Priya</td>
-<td>Christ University</td>
-<td>Delivery Assistant</td>
-<td><button class="accept">Accept</button></td>
-</tr>
-
-<tr>
-<td>Arjun</td>
-<td>Jain University</td>
-<td>Shop Assistant</td>
-<td><button class="accept">Accept</button></td>
-</tr>
-
-</table>
-
-</div>
-
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>College</th>
+                    <th>Job Applied</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Rahul Sharma</td>
+                    <td>Bangalore University</td>
+                    <td>Event Helper</td>
+                    <td><button class="btn-hire" onclick="alert('Student Hired!'); this.innerText='Hired'; this.disabled=true; this.style.background='#b3b3cc';">Hire Student</button></td>
+                </tr>
+                <tr>
+                    <td>Priya Nair</td>
+                    <td>Christ University</td>
+                    <td>Delivery Assistant</td>
+                    <td><button class="btn-hire" onclick="alert('Student Hired!'); this.innerText='Hired'; this.disabled=true; this.style.background='#b3b3cc';">Hire Student</button></td>
+                </tr>
+                <tr>
+                    <td>Arjun Das</td>
+                    <td>Jain University</td>
+                    <td>Shop Assistant</td>
+                    <td><button class="btn-hire" onclick="alert('Student Hired!'); this.innerText='Hired'; this.disabled=true; this.style.background='#b3b3cc';">Hire Student</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

@@ -1,41 +1,56 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="UTF-8">
-<title>Post Job | UniHour</title>
-<link rel="stylesheet" href="css/glass.css">
+    <meta charset="UTF-8">
+    <title>Post Job | UniHour</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/glass.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { background: var(--bg-dark); font-family: 'Outfit', sans-serif; display: flex; flex-direction: column; height: auto; padding-top: 80px; }
+        .glass-container { margin: 2rem auto; width: 90%; max-width: 600px; }
+        .back-nav { position: fixed; top: 0; width: 100%; padding: 1rem 5%; background: rgba(0,0,51,0.9); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid var(--glass-border); }
+        .back-nav a { color: var(--primary-green); text-decoration: none; font-weight: 600; }
+    </style>
 </head>
 
 <body>
+    <nav class="back-nav">
+        <a href="employer_dashboard.html">← Back to Dashboard</a>
+    </nav>
 
-<div class="glass-container">
+    <div class="glass-container">
+        <h2 style="color: var(--primary-green); margin-bottom: 1.5rem;">Post a New Job</h2>
+        <form action="#" onsubmit="alert('Job Posted Successfully!'); window.location.href='employer_dashboard.html'; return false;">
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; margin-bottom: 0.5rem;">Job Title</label>
+                <input type="text" placeholder="e.g. Event Helper" required style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: white;">
+            </div>
 
-<h2>Post a New Job</h2>
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; margin-bottom: 0.5rem;">Location</label>
+                <input type="text" placeholder="e.g. Bangalore" required style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: white;">
+            </div>
 
-<form>
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; margin-bottom: 0.5rem;">Hourly Pay (&#8377;)</label>
+                <input type="number" placeholder="200" required style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: white;">
+            </div>
 
-<label>Job Title</label>
-<input type="text" placeholder="Event Helper">
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; margin-bottom: 0.5rem;">Job Description</label>
+                <textarea placeholder="Describe the job role" required style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: white; min-height: 100px;"></textarea>
+            </div>
 
-<label>Location</label>
-<input type="text" placeholder="Bangalore">
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; margin-bottom: 0.5rem;">Date</label>
+                <input type="date" required style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: white;">
+            </div>
 
-<label>Hourly Pay (&#8377;)</label>
-<input type="number" placeholder="200">
-
-<label>Job Description</label>
-<textarea placeholder="Describe the job role"></textarea>
-
-<label>Date</label>
-<input type="date">
-
-<button type="submit">Post Job</button>
-
-</form>
-
-</div>
-
+            <button type="submit" style="background: var(--primary-green); color: var(--bg-dark); border: none; padding: 1rem; border-radius: 8px; font-weight: 800; cursor: pointer; margin-top: 1rem;">Post Job</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -95,9 +95,13 @@
     }
 
     /* Dashboard Layouts */
-    .dashboard-container {
-        flex-direction: column;
-        height: auto;
+    .dashboard-container, .container[style] {
+        flex-direction: column !important;
+        height: auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
     }
     
     .sidebar {
@@ -105,70 +109,105 @@
         height: auto !important;
         position: relative !important;
         border-right: none !important;
-        border-bottom: 1px solid var(--glass-border);
+        border-bottom: 1px solid var(--glass-border) !important;
         padding: 1.5rem !important;
     }
     .sidebar ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        justify-content: center;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+        justify-content: center !important;
+        padding: 0 !important;
     }
     .sidebar ul li {
-        margin-bottom: 0;
+        margin: 0 !important;
     }
     .sidebar ul li a {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.8rem 1.2rem !important;
+        font-size: 0.95rem !important;
     }
     .sidebar h2 {
         margin-bottom: 1rem !important;
+        text-align: center !important;
     }
     
-    .main-content {
-        padding: 1.5rem !important;
+    .main, .main-content {
+        margin-left: 0 !important;
+        padding: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+        height: auto !important;
+        flex: none !important;
     }
 
     /* Dashboard Headers */
     .dashboard-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 2rem;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 20px !important;
+        padding-bottom: 20px !important;
+        display: flex !important;
+    }
+    .dashboard-header > div {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
     }
     .header-illustration {
-        order: -1;
+        margin-top: 0 !important;
+        order: -1 !important;
     }
     .header-illustration img {
-        max-height: 120px;
+        max-height: 120px !important;
+    }
+    .user-profile {
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-top: 15px !important;
     }
 
     /* Grids & Cards */
-    .stats-grid {
+    .cards[style], .stats-grid, .cards {
         grid-template-columns: 1fr !important;
-        gap: 1rem;
+        gap: 15px !important;
+        display: grid !important;
+    }
+    .card, .stat-card {
+        width: 100% !important;
+        margin-bottom: 10px !important;
     }
 
     /* Job Cards */
     .job-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 1.5rem;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 15px !important;
+        padding: 20px !important;
+        display: flex !important;
     }
     .job-info {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: center !important;
+        display: flex !important;
+    }
+    .job-details {
+        text-align: center !important;
     }
     .job-meta {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: center;
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: center !important;
+        display: flex !important;
     }
     .job-actions {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        text-align: center !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
     }
 
     /* Tables in Applications */

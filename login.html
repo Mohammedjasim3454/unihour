@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,6 +30,14 @@
                 
                 <form id="loginForm" action="#" method="POST">
                     <div class="form-group">
+                        <label for="userType">Log in as</label>
+                        <select id="userType" name="userType" style="width: 100%; padding: 1rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 8px; color: white;">
+                            <option value="student">Student</option>
+                            <option value="employer">Employer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" placeholder="you@example.com" required>
                     </div>
@@ -52,10 +60,8 @@
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            // In a real scenario, this is where we'd fetch from api/auth.php
-            // For now, let's mock the routing based on email input roughly
-            const email = document.getElementById('email').value;
-            if(email.includes('employer')) {
+            const userType = document.getElementById('userType').value;
+            if(userType === 'employer') {
                 window.location.href = 'employer_dashboard.html';
             } else {
                 window.location.href = 'student_dashboard.html';
