@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,7 +16,13 @@
             <div class="logo">
                 <img src="images/logo.png" alt="UniHour Logo" id="nav-logo">
             </div>
-            <nav>
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-toggle" id="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="navbar-links">
                 <ul class="nav-links">
                     <li><a href="#how-it-works">How It Works</a></li>
                     <li><a href="#jobs">Browse Jobs</a></li>
@@ -58,45 +64,17 @@
                     UniHour is a smart platform designed to connect students with local businesses that require
                     short-term hourly workers. Through a simple and user-friendly interface, students can browse nearby
                     job opportunities, apply for flexible shifts, and earn extra income while continuing their studies.
-                    At the same time, employers can quickly post temporary job requirements and hire verified students
-                    for tasks such as event support, delivery assistance, or retail help. The platform offers key
-                    features like location-based job matching, real-time job postings, secure student verification, and
-                    a transparent system that builds trust between employers and students. By combining these features,
-                    UniHour creates a beneficial ecosystem where students gain financial independence and practical
-                    experience while businesses receive reliable and timely workforce support.
                 </p>
-            </div>
-        </section>
-
-        <section id="how-it-works" class="features">
-            <div class="container">
-                <h2>How UniHour Works</h2>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="icon">🎓</div>
-                        <h3>Verified Students Only</h3>
-                        <p>A secure, student-only community verified with college credentials.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">📍</div>
-                        <h3>Local Matches</h3>
-                        <p>Find jobs within a specific radius of your campus to minimize travel.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">⚡</div>
-                        <h3>Real-time Booking</h3>
-                        <p>Claim shifts instantly and get notified when employers approve.</p>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2026 UniHour. All rights reserved.</p>
+    <footer style="padding: 3rem 0; text-align: center; border-top: 1px solid var(--glass-border); margin-top: 5rem;">
+        <div class="container">
+            <p style="color: var(--text-muted);">&copy; 2026 UniHour Platform. All rights reserved.</p>
         </div>
     </footer>
+
     <script src="js/main.js"></script>
 </body>
 

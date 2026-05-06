@@ -33,6 +33,10 @@ img {
     margin: 0 auto;
 }
 
+.mobile-menu-toggle {
+    display: none;
+}
+
 /* Navbar */
 .navbar {
     padding: 1.5rem 0;
