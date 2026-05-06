@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
     <div class="auth-split-screen">
         <div class="auth-sidebar">
@@ -58,10 +60,12 @@
     </div>
     <script src="js/main.js"></script>
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            const userType = document.getElementById('userType').value;
-            if(userType === 'employer') {
+            // In a real scenario, this is where we'd fetch from api/auth.php
+            // For now, let's mock the routing based on email input roughly
+            const email = document.getElementById('email').value;
+            if (email.includes('employer')) {
                 window.location.href = 'employer_dashboard.html';
             } else {
                 window.location.href = 'student_dashboard.html';
