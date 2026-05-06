@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | UniHour</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-split-screen">
+        <div class="auth-sidebar">
+            <div class="logo" style="margin-bottom: 2rem; z-index: 2;">
+                <img src="images/logo.png" alt="UniHour Logo" style="height: 60px;">
+            </div>
+            <h2>Join UniHour.</h2>
+            <p>Empowering students to earn on their own terms, and helping local businesses find reliable talent fast.</p>
+        </div>
+        
+        <div class="auth-content">
+            <div class="auth-header">
+                <a href="index.html">← Back to Home</a>
+            </div>
+            
+            <div class="auth-form-container">
+                <h1>Create Account</h1>
+                <p class="subtitle">Join our community today.</p>
+                
+                <form id="registerForm" action="#" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="user_type">I am a...</label>
+                        <select id="user_type" name="user_type" required>
+                            <option value="student">Student (Looking for work)</option>
+                            <option value="employer">Employer (Looking to hire)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@university.edu" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+                    </div>
+
+                    <!-- Dynamic Fields for Students -->
+                    <div id="student_fields" class="form-group">
+                        <label>College ID Verification</label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="college_id" name="college_id" accept="image/*,.pdf">
+                            <div class="file-upload-btn" id="file_btn_text">
+                                <span>📄</span> Upload ID Card (Image/PDF)
+                            </div>
+                        </div>
+                        <small style="color: var(--text-muted); display: block; margin-top: 5px;">Required for booking jobs.</small>
+                    </div>
+
+                    <!-- Dynamic Fields for Employers -->
+                    <div id="employer_fields" class="form-group hidden-field">
+                        <label for="company_name">Business / Company Name</label>
+                        <input type="text" id="company_name" name="company_name" placeholder="e.g. John's Cafe">
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Create Account</button>
+                    
+                    <div class="auth-footer">
+                        <p>Already have an account? <a href="login.html">Log In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Handle URL parameters to pre-select user type based on index.html buttons
+        const urlParams = new URLSearchParams(window.location.search);
+        const typeParam = urlParams.get('type');
+        const userTypeSelect = document.getElementById('user_type');
+        
+        if(typeParam === 'employer') {
+            userTypeSelect.value = 'employer';
+        }
+
+        // Toggle fields based on User Type selection
+        const studentFields = document.getElementById('student_fields');
+        const employerFields = document.getElementById('employer_fields');
+        
+        function toggleFields() {
+            if (userTypeSelect.value === 'student') {
+                studentFields.classList.remove('hidden-field');
+                employerFields.classList.add('hidden-field');
+                document.getElementById('college_id').required = true;
+                document.getElementById('company_name').required = false;
+            } else {
+                studentFields.classList.add('hidden-field');
+                employerFields.classList.remove('hidden-field');
+                document.getElementById('college_id').required = false;
+                document.getElementById('company_name').required = true;
+            }
+        }
+        
+        userTypeSelect.addEventListener('change', toggleFields);
+        toggleFields(); // Initial call
+
+        // File upload text update
+        document.getElementById('college_id').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : "Upload ID Card (Image/PDF)";
+            document.getElementById('file_btn_text').innerHTML = `<span>✅</span> ${fileName}`;
+            document.getElementById('file_btn_text').style.borderColor = 'var(--primary-green)';
+            document.getElementById('file_btn_text').style.color = 'var(--text-light)';
+        });
+
+        // Form Submission Mock
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Account created successfully! (This is a frontend demo). Routing to login...");
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

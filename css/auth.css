@@ -1,0 +1,236 @@
+/* Split Screen Container for Auth Pages */
+.auth-split-screen {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: var(--bg-dark);
+}
+
+.auth-sidebar {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(102, 255, 153, 0.1) 0%, rgba(0, 0, 51, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    position: relative;
+    border-right: 1px solid var(--glass-border);
+}
+
+.auth-sidebar h2 {
+    font-size: 3rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    text-align: center;
+    z-index: 2;
+}
+
+.auth-sidebar p {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    max-width: 80%;
+    z-index: 2;
+}
+
+/* Background elements for sidebar */
+.auth-sidebar::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--primary-green) 0%, transparent 60%);
+    opacity: 0.15;
+    filter: blur(40px);
+    top: -50px;
+    left: -50px;
+}
+
+.auth-sidebar::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #00ffff 0%, transparent 60%);
+    opacity: 0.1;
+    filter: blur(50px);
+    bottom: -100px;
+    right: -100px;
+}
+
+.auth-content {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5rem;
+    overflow-y: auto;
+}
+
+.auth-header {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+}
+
+.auth-header a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.auth-header a:hover {
+    color: var(--primary-green);
+}
+
+.auth-form-container {
+    max-width: 500px;
+    margin: auto;
+    width: 100%;
+}
+
+.auth-form-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-form-container .subtitle {
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 1rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 10px rgba(102, 255, 153, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.form-group input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+select option {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--primary-green);
+    color: var(--bg-dark);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: var(--primary-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 255, 153, 0.3);
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--text-muted);
+}
+
+.auth-footer a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* File Upload styling */
+.file-upload-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+}
+
+.file-upload-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    height: 100%;
+}
+
+.file-upload-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px dashed var(--glass-border);
+    background: var(--glass-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--text-muted);
+    transition: all 0.3s;
+    text-align: center;
+    pointer-events: none; /* Let clicks pass through to the actual file input underneath */
+}
+
+.file-upload-wrapper:hover .file-upload-btn {
+    border-color: var(--primary-green);
+    color: var(--text-light);
+}
+
+/* Hide toggle blocks by default */
+.hidden-field {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .auth-split-screen {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    .auth-sidebar {
+        display: none; /* Hide sidebar on small screens to focus on form */
+    }
+    .auth-content {
+        padding: 2rem;
+    }
+}

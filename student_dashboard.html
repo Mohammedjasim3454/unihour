@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard | UniHour</title>
+    <!-- Use the new employer CSS for layout -->
+    <link rel="stylesheet" href="css/employer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Specific overrides to mix the two themes beautifully */
+        body { font-family: 'Outfit', sans-serif; background: #000033; color: white; }
+        .sidebar { background: #000022; border-right: 1px solid rgba(255,255,255,0.1); }
+        .main { background: #000033; overflow-y: auto; }
+        .card { background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1); box-shadow: none; border-radius: 15px; }
+        .card p { color: #66ff99; }
+        .card h3 { color: #b3b3cc; }
+        .sidebar ul li a:hover { color: #66ff99; }
+    </style>
+</head>
+<body>
+    <div class="container" style="max-width: 100%; width: 100%; margin: 0;">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2 style="color: #66ff99;">UniHour</h2>
+            <ul>
+                <li><a href="student_dashboard.html" style="color: #66ff99; font-weight:bold;">Browse Jobs</a></li>
+                <li><a href="#">My Shifts</a></li>
+                <li><a href="#">Earnings</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </div>
+        <!-- Main Content -->
+        <div class="main">
+            <!-- Header section matching previous implementation -->
+            <header class="dashboard-header" style="display:flex; align-items: flex-end; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px;">
+                <div style="flex: 1;">
+                    <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem; margin-top:0;">Find Work Near You</h1>
+                    <p style="color: #b3b3cc;">Showing hourly jobs within 5km of your location.</p>
+                </div>
+                <div class="header-illustration" style="flex: 1; text-align: center; margin-top: -40px;">
+                    <img src="images/header_worker.png" alt="Student Working" style="max-height: 180px; object-fit: contain;">
+                </div>
+                <div class="user-profile" style="flex: 1; justify-content: flex-end; display:flex; gap:15px; align-items:center;">
+                    <div class="user-info text-right" style="text-align: right;">
+                        <strong style="display: block;">John Doe</strong>
+                        <span style="color: #66ff99; font-size: 0.9rem;">Verified Student</span>
+                    </div>
+                    <div class="avatar" style="background:#66ff99; color:#000033; width:40px; height:40px; border-radius:50%; display:flex; justify-content:center; align-items:center; font-weight:bold;">J</div>
+                </div>
+            </header>
+            
+            <div class="cards" style="margin-bottom: 40px;">
+                <div class="card">
+                    <h3>Earnings This Week</h3>
+                    <p>&#8377;1,250</p>
+                </div>
+                <div class="card">
+                    <h3>Hours Worked</h3>
+                    <p>8.5 hr</p>
+                </div>
+                <div class="card">
+                    <h3>Upcoming Shifts</h3>
+                    <p>2</p>
+                </div>
+            </div>
+
+            <div class="section-title" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h2 style="margin:0;">Available Shifts</h2>
+                <select style="padding: 0.5rem; background: #000033; color: white; border: 1px solid rgba(255,255,255,0.1); border-radius: 5px;">
+                    <option>Sort by: Nearest</option>
+                    <option>Sort by: Highest Paying</option>
+                    <option>Sort by: Date</option>
+                </select>
+            </div>
+
+            <div class="job-list" id="studentJobList">
+                <!-- Job Card 1 -->
+                <div class="job-card" style="background:rgba(255,255,255,0.05); padding:20px; border-radius:15px; display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; border:1px solid rgba(255,255,255,0.1);">
+                    <div class="job-details" style="display: flex; gap: 1.5rem; align-items: center;">
+                        <img src="images/job_icon_1.png" alt="Cafe Work" style="width: 60px; height: 60px; border-radius: 12px; object-fit: cover;">
+                        <div>
+                            <h4 style="margin:0 0 5px 0; font-size:1.2rem;">Cafe Inventory Assistant</h4>
+                            <div class="job-meta" style="color:#b3b3cc; font-size:0.9rem; display:flex; gap:15px;">
+                                <span>🏢 Brews & Bites</span>
+                                <span>📍 1.2 km away</span>
+                                <span>🕒 Today, 4:00 PM - 7:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-actions" style="text-align: right;">
+                        <div class="job-price" style="font-weight:bold; font-size:1.2rem; margin-bottom:10px;">&#8377;150/hr</div>
+                        <button class="btn-apply" style="background:#66ff99; color:#000033; border:none; padding:8px 15px; border-radius:8px; cursor:pointer; font-weight:bold;" onclick="alert('Application Sent!')">Claim Shift</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="job-card" style="background:rgba(255,255,255,0.05); padding:20px; border-radius:15px; display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; border:1px solid rgba(255,255,255,0.1);">
+                    <div class="job-details" style="display: flex; gap: 1.5rem; align-items: center;">
+                        <img src="images/job_icon_2.png" alt="Event Work" style="width: 60px; height: 60px; border-radius: 12px; object-fit: cover;">
+                        <div>
+                            <h4 style="margin:0 0 5px 0; font-size:1.2rem;">Event Registration Desk</h4>
+                            <div class="job-meta" style="color:#b3b3cc; font-size:0.9rem; display:flex; gap:15px;">
+                                <span>🏢 Tech Hub BLR</span>
+                                <span>📍 3.5 km away</span>
+                                <span>🕒 Tomorrow, 9:00 AM - 1:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-actions" style="text-align: right;">
+                        <div class="job-price" style="font-weight:bold; font-size:1.2rem; margin-bottom:10px;">&#8377;200/hr</div>
+                        <button class="btn-apply" style="background:#66ff99; color:#000033; border:none; padding:8px 15px; border-radius:8px; cursor:pointer; font-weight:bold;" onclick="alert('Application Sent!')">Claim Shift</button>
+                    </div>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="job-card" style="background:rgba(255,255,255,0.05); padding:20px; border-radius:15px; display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; border:1px solid rgba(255,255,255,0.1);">
+                    <div class="job-details" style="display: flex; gap: 1.5rem; align-items: center;">
+                        <img src="images/job_icon_3.png" alt="Retail Work" style="width: 60px; height: 60px; border-radius: 12px; object-fit: cover;">
+                        <div>
+                            <h4 style="margin:0 0 5px 0; font-size:1.2rem;">Retail Flyer Distribution</h4>
+                            <div class="job-meta" style="color:#b3b3cc; font-size:0.9rem; display:flex; gap:15px;">
+                                <span>🏢 MegaMart</span>
+                                <span>📍 0.8 km away</span>
+                                <span>🕒 Saturday, 10:00 AM - 3:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="job-actions" style="text-align: right;">
+                        <div class="job-price" style="font-weight:bold; font-size:1.2rem; margin-bottom:10px;">&#8377;120/hr</div>
+                        <button class="btn-apply" style="background:#66ff99; color:#000033; border:none; padding:8px 15px; border-radius:8px; cursor:pointer; font-weight:bold;" onclick="alert('Application Sent!')">Claim Shift</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | UniHour</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-split-screen">
+        <div class="auth-sidebar">
+            <div class="logo" style="margin-bottom: 2rem; z-index: 2;">
+                <img src="images/logo.png" alt="UniHour Logo" style="height: 60px;">
+            </div>
+            <h2>Welcome Back.</h2>
+            <p>Log in to claim your next shift or find the perfect student helper for your business today.</p>
+        </div>
+        
+        <div class="auth-content">
+            <div class="auth-header">
+                <a href="index.html">← Back to Home</a>
+            </div>
+            
+            <div class="auth-form-container">
+                <h1>Log In</h1>
+                <p class="subtitle">Enter your details below to access your account.</p>
+                
+                <form id="loginForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Sign In</button>
+                    
+                    <div class="auth-footer">
+                        <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real scenario, this is where we'd fetch from api/auth.php
+            // For now, let's mock the routing based on email input roughly
+            const email = document.getElementById('email').value;
+            if(email.includes('employer')) {
+                window.location.href = 'employer_dashboard.html';
+            } else {
+                window.location.href = 'student_dashboard.html';
+            }
+        });
+    </script>
+</body>
+</html>

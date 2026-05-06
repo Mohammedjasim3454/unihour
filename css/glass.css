@@ -1,0 +1,66 @@
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#3a7bd5,#00d2ff);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* Glass Container */
+
+.glass-container{
+background:rgba(255,255,255,0.15);
+padding:40px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+box-shadow:0 8px 32px rgba(0,0,0,0.3);
+color:white;
+width:500px;
+}
+
+/* Form */
+
+form{
+display:flex;
+flex-direction:column;
+}
+
+input,textarea{
+margin:10px 0;
+padding:10px;
+border:none;
+border-radius:8px;
+}
+
+button{
+margin-top:15px;
+padding:12px;
+background:#66ff99;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* Table */
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th,td{
+padding:10px;
+text-align:center;
+}
+
+.accept{
+background:#66ff99;
+border:none;
+padding:8px 15px;
+border-radius:6px;
+cursor:pointer;
+}
