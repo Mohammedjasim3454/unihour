@@ -1,0 +1,162 @@
+/* Global Responsive Adjustments */
+
+@media (max-width: 900px) {
+    /* Navbar adjustments */
+    .navbar {
+        padding: 1rem 0;
+    }
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .hero {
+        padding-top: 150px; /* accommodate taller navbar */
+    }
+
+    /* Auth pages */
+    .auth-split-screen {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+    .auth-sidebar {
+        display: none;
+    }
+    .auth-content {
+        padding: 2rem 1rem;
+    }
+
+    /* Dashboard Layouts */
+    .container {
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: 100vh;
+    }
+    
+    .sidebar {
+        width: 100% !important;
+        height: auto !important;
+        position: relative !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: 1rem !important;
+    }
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+    .sidebar ul li {
+        margin: 5px 0 !important;
+    }
+    .sidebar h2 {
+        margin-bottom: 15px !important;
+    }
+    
+    .main, .main-content {
+        margin-left: 0 !important;
+        padding: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Dashboard Headers */
+    .dashboard-header {
+        flex-direction: column;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 20px;
+    }
+    .dashboard-header > div {
+        text-align: center !important;
+        justify-content: center !important;
+    }
+    .header-illustration {
+        margin-top: 0 !important;
+    }
+    .header-illustration img {
+        max-height: 120px !important;
+    }
+
+    /* Grids & Cards */
+    .cards, .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    .feature-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Job Cards */
+    .job-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .job-details {
+        flex-direction: column;
+        gap: 1rem !important;
+    }
+    .job-meta {
+        flex-direction: column;
+        gap: 5px !important;
+        align-items: center;
+    }
+    .job-actions {
+        text-align: center !important;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Tables in Applications */
+    .table-container {
+        overflow-x: auto;
+    }
+    table {
+        width: 100%;
+        min-width: 600px;
+    }
+
+    /* Titles and Typography */
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .unihour-overview {
+        padding: 40px 20px;
+    }
+    .section-title {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .auth-form-container h1 {
+        font-size: 2rem !important;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .btn-primary, .btn-secondary {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .hero-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+}
