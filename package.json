@@ -1,0 +1,11 @@
+{
+  "name": "unihour",
+  "version": "1.0.0",
+  "description": "UniHour Project",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

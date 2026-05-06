@@ -13,7 +13,7 @@
     <div class="auth-split-screen">
         <div class="auth-sidebar">
             <div class="logo" style="margin-bottom: 2rem; z-index: 2;">
-                <a href="index.html" style="font-size: 3.5rem; font-weight: 800; color: #66FF99; text-decoration: none; font-family: 'Outfit', sans-serif; letter-spacing: 1px; display: block; text-shadow: 0 0 20px rgba(102,255,153,0.3);">UniHour</a>
+                <img src="images/logo.png" alt="UniHour Logo" style="height: 60px;">
             </div>
             <h2>Join UniHour.</h2>
             <p>Empowering students to earn on their own terms, and helping local businesses find reliable talent fast.</p>
@@ -21,7 +21,7 @@
         
         <div class="auth-content">
             <div class="auth-header">
-                <a href="index.html">â† Back to Home</a>
+                <a href="index.html">← Back to Home</a>
             </div>
             
             <div class="auth-form-container">
@@ -58,7 +58,7 @@
                         <div class="file-upload-wrapper">
                             <input type="file" id="college_id" name="college_id" accept="image/*,.pdf">
                             <div class="file-upload-btn" id="file_btn_text">
-                                <span>ðŸ“„</span> Upload ID Card (Image/PDF)
+                                <span>📄</span> Upload ID Card (Image/PDF)
                             </div>
                         </div>
                         <small style="color: var(--text-muted); display: block; margin-top: 5px;">Required for booking jobs.</small>
@@ -114,7 +114,7 @@
         // File upload text update
         document.getElementById('college_id').addEventListener('change', function(e) {
             const fileName = e.target.files[0] ? e.target.files[0].name : "Upload ID Card (Image/PDF)";
-            document.getElementById('file_btn_text').innerHTML = `<span>âœ…</span> ${fileName}`;
+            document.getElementById('file_btn_text').innerHTML = `<span>✅</span> ${fileName}`;
             document.getElementById('file_btn_text').style.borderColor = 'var(--primary-green)';
             document.getElementById('file_btn_text').style.color = 'var(--text-light)';
         });
