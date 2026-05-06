@@ -1,25 +1,22 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniHour Employer Dashboard</title>
-    <link rel="stylesheet" href="css/employer.css">
+    <title>Employer Dashboard | UniHour</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
-
 <body>
-
-    <div class="container">
-
+    <div class="dashboard-container">
         <!-- Sidebar -->
-        <div class="sidebar">
+        <aside class="sidebar">
             <h2>UniHour</h2>
-
             <ul>
-                <li><a href="employer_dashboard.html">Dashboard</a></li>
+                <li><a href="employer_dashboard.html" class="active">Dashboard</a></li>
                 <li><a href="post_job.html">Post Job</a></li>
                 <li><a href="#">My Jobs</a></li>
                 <li><a href="applications.html">Applications</a></li>
@@ -27,43 +24,47 @@
                 <li><a href="#">Profile</a></li>
                 <li><a href="index.html">Logout</a></li>
             </ul>
-
-        </div>
+        </aside>
 
         <!-- Main Content -->
-        <div class="main">
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-text">
+                    <h1>Employer Dashboard</h1>
+                    <p>Manage jobs and hire students easily.</p>
+                </div>
+                <div class="user-profile">
+                    <div class="user-info">
+                        <strong>Business User</strong>
+                        <span class="highlight" style="display: block; font-size: 0.8rem;">Verified Employer</span>
+                    </div>
+                    <div class="avatar">B</div>
+                </div>
+            </header>
 
-            <h1>Employer Dashboard</h1>
-            <p>Manage jobs and hire students easily.</p>
-
-            <div class="cards">
-
-                <div class="card">
+            <section class="stats-grid">
+                <div class="stat-card">
                     <h3>Total Jobs</h3>
                     <p>5</p>
                 </div>
-
-                <div class="card">
+                <div class="stat-card">
                     <h3>Applications</h3>
                     <p>18</p>
                 </div>
-
-                <div class="card">
+                <div class="stat-card">
                     <h3>Hired Students</h3>
                     <p>7</p>
                 </div>
-
-                <div class="card">
+                <div class="stat-card">
                     <h3>Active Jobs</h3>
                     <p>3</p>
                 </div>
-
-            </div>
-
-        </div>
-
+            </section>
+            
+            <!-- Additional employer content could go here -->
+        </main>
     </div>
-
 </body>
+
 
 </html>

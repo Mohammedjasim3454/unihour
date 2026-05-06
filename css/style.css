@@ -237,23 +237,25 @@ img {
 
 /* Overview Section */
 .unihour-overview {
-    padding: 60px;
-    background: #f5f7fa;
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #030a21 100%);
     text-align: center;
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .unihour-overview h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #000033;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    font-weight: 800;
 }
 
 .unihour-overview p {
-    max-width: 900px;
+    max-width: 800px;
     margin: auto;
-    font-size: 18px;
-    line-height: 1.7;
-    color: #333;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-muted);
 }
 
 /* Features Section */
